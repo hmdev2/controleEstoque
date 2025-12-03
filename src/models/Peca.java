@@ -7,6 +7,19 @@ public abstract class Peca {
     protected int estoqueMaximo;
     
     public Peca(String descricao, int quantidade, int estoqueMinimo, int estoqueMaximo) {
+        if (descricao == null || descricao.trim().isEmpty()) {
+            throw new IllegalArgumentException("Descrição não pode ser vazia");
+        }
+        if (quantidade < 0) {
+            throw new IllegalArgumentException("Quantidade não pode ser negativa");
+        }
+        if (estoqueMinimo < 0) {
+            throw new IllegalArgumentException("Estoque mínimo não pode ser negativo");
+        }
+        if (estoqueMaximo <= estoqueMinimo) {
+            throw new IllegalArgumentException("Estoque máximo deve ser maior que o mínimo");
+        }
+        
         this.descricao = descricao;
         this.quantidade = quantidade;
         this.estoqueMinimo = estoqueMinimo;
@@ -30,6 +43,9 @@ public abstract class Peca {
     }
     
     public void setQuantidade(int quantidade) {
+        if (quantidade < 0) {
+            throw new IllegalArgumentException("Quantidade não pode ser negativa");
+        }
         this.quantidade = quantidade;
     }
     
