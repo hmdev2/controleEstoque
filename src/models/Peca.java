@@ -1,10 +1,10 @@
 package models;
 
 public abstract class Peca {
-    private String descricao;
-    private int quantidade;
-    private int estoqueMinimo;
-    private int estoqueMaximo;
+    protected String descricao;
+    protected int quantidade;
+    protected int estoqueMinimo;
+    protected int estoqueMaximo;
     
     public Peca(String descricao, int quantidade, int estoqueMinimo, int estoqueMaximo) {
         this.descricao = descricao;
