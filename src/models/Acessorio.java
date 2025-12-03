@@ -29,7 +29,7 @@ public class Acessorio extends Peca implements Item {
             
         } catch (InputMismatchException e) {
             System.out.println("Erro: Digite apenas números inteiros.");
-            scanner.nextLine(); // Limpar buffer
+            scanner.nextLine();
         }
     }
 }
